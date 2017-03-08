@@ -15,8 +15,14 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        createViews()
         // Do any additional setup after loading the view, typically from a nib.
-        
+     
+    }
+    
+
+    
+    func createViews() {
         //View1
         let view1 = vcOne(nibName: "vcOne", bundle: nil)
         self.addChildViewController(view1)
@@ -32,7 +38,7 @@ class ViewController: UIViewController {
         var view2Frame: CGRect = view2.view.frame
         view2Frame.origin.x = self.view.frame.width
         view2.view.frame =  view2Frame
-
+        
         //View3
         let view3 = vcThree(nibName: "vcThree", bundle: nil)
         self.addChildViewController(view3)
@@ -42,8 +48,8 @@ class ViewController: UIViewController {
         var view3Frame: CGRect = view3.view.frame
         view3Frame.origin.x = 2 * self.view.frame.width
         view3.view.frame =  view3Frame
-
-        //View4 
+        
+        //View4
         let view4 = vcFour(nibName: "vcFour", bundle: nil)
         self.addChildViewController(view4)
         self.scrollView.addSubview(view4.view)
@@ -53,21 +59,9 @@ class ViewController: UIViewController {
         view4frame.origin.x = 3 * self.view.frame.width
         view4.view.frame = view4frame
         
-        
-        
         self.scrollView.contentSize = CGSize(width: self.view.frame.width * 4, height: self.view.frame.size.height)
+    
         
-        
-        
-        
-        
-        
-        
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
 
